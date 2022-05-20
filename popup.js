@@ -1,9 +1,10 @@
 var tabList = {};
-let tabs = chrome.tabs.query({"currentWindow":true}, updateTabList);
+var debug;
+let tabs = chrome.tabs.query({"currentWindow":true, "audible":true}, updateTabList);
 
 
 function updateSliders () {
-    for (i = 0; i < tabList.keys().length; i ++) {
+    for (i = 0; i < Object.keys(tabList).length; i ++) {
         listContainer = document.getElementById("sliders");
         var divToAdd = document.createElement("div");
         divToAdd.setAttribute("id", "slider_" + toString(tabList[tabList.keys()[i]]));
@@ -26,17 +27,19 @@ function updateSliders () {
     }
 }
 
-function updateTabList (tabList) {
-    for (i = 0; i < tabList.length; i ++) {
-        if (tabList.keys().indexOf(tabList[i].id) >= 0) {
-
-            tabList.push({
-                key: tabList[i].id,
+function updateTabList (inpList) {
+    console.log("Orig keys: " + Object.keys(tabList));
+    for (i = 0; i < inpList.length; i ++) {
+        console.log("ID: " + inpList[i].id);
+        if (Object.keys(inpList).indexOf(toString(inpList[i].id)) < 0) {
+            inpList.push({
+                key: toString(inpList[i].id),
                 value: 100
             });
-
         }
+
     }
+    console.log("Final keys: " + Object.keys(tabList));
 
     updateSliders();
 }
