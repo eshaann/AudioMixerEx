@@ -4,17 +4,17 @@
     "description":"AudioMixer",
     "version":"1.0",
     "icons":{
-        "16":"image16.png",
-        "32":"image32.png",
-        "48":"48image.png",
-        "128":"128image.png"
+        "16":"logos/image16.png",
+        "32":"logos/image32.png",
+        "48":"logos/48image.png",
+        "128":"logos/128image.png"
     },
     "action": {
         "default_icon":{
-            "16":"image16.png",
-            "32":"image32.png",
-            "48":"48image.png",
-            "128":"128image.png"
+            "16":"logos/image16.png",
+            "32":"logos/image32.png",
+            "48":"logos/48image.png",
+            "128":"logos/128image.png"
         },
         "default_title":"AudioMixer",
         "default_popup":"popup.html"
