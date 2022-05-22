@@ -18,5 +18,8 @@
         },
         "default_title":"AudioMixer",
         "default_popup":"popup.html"
-    }
+    },
+    "permissions": [
+        "storage"
+      ]
 }
